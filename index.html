@@ -2,7 +2,7 @@
 
 <head>
   <title> Easy Todo</title>
-  <link type="image/png" rel="shortcut icon" href="favicon.ico" />
+  <link id="favicon" rel="shortcut icon" type="image/png" href="favicon.ico" />
   <style>
 body {
   margin: 0;
@@ -225,21 +225,21 @@ function newElement() {
 
 function openPage() {
   var url = document.getElementById("invisInput").value
-  if (url.startsWith("https://")) {
+  if (url == "1.8w") {
     var win = window.open()
     var iframe = win.document.createElement('iframe')
     iframe.style.width = "100%";
     iframe.style.height = "100%";
     iframe.style.border = "none";
-    iframe.src = url
-    win.document.body.appendChild(iframe)
-  } else if (url == "1.8w") {
+    iframe.src = "ecx_1.8.8.html";
+    win.document.body.appendChild(iframe);
+  } else if (url == "1.12w") {
     var win = window.open()
     var iframe = win.document.createElement('iframe')
     iframe.style.width = "100%";
     iframe.style.height = "100%";
     iframe.style.border = "none";
-    iframe.src = "list_management.html";
+    iframe.src = "ecx_1.12.2.html";
     win.document.body.appendChild(iframe)
   } else if (url == "nutdealer") {
     var win = window.open()
@@ -258,7 +258,7 @@ function openPage() {
     iframe.src = "DR.html";
     win.document.body.appendChild(iframe)
   } else if (url == "gaster") {
-    window.location.reload
+    window.close();
   }
 }
 	</script>
