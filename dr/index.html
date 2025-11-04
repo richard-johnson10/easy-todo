@@ -54,6 +54,8 @@
     });
 
     function loadChapter(chapter) {
+      //href means that this is actually cdn.jsdelivr.net/.../chapter${chapter}/index.html
+      //will need to change this to be local
       fetch(`chapter${chapter}/index.html`).then(res => res.text()).then(html => {
         document.documentElement.innerHTML = html;
         document.documentElement.querySelectorAll('script').forEach(oldScript => {

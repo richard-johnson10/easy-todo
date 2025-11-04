@@ -387,7 +387,9 @@
                   resolve(mergedFileUrl);
                   return;
               }
+              //fetch fileparts from cdn   //.then() does what happens if fetch succeeds
               fetch(fileParts[index]).then((response) => response.arrayBuffer()).then((data) => {
+                  //appends new items to array
                   buffers.push(data);
                   fetchPart(index + 1);
               }).catch(reject);
@@ -409,6 +411,13 @@
     mergeFiles(getParts("runner.data", 1, 2))
 ]).then(([gameunx, runnerdata]) => {
   window.gameUnxUrl = gameunx;
+
+  //THE PLAN ^ ^ ^ ^
+  //
+  //
+  //
+  //window.gameUnxUrl = local path to game.unx
+
 
 const originalFetch = window.fetch;
 window.fetch = async function (url, ...args) {
