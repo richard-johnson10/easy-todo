@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -94,7 +95,7 @@ ul li.checked::before {
 /* Clear floats after the header */
 .header:after {
   content: "";
-  display: table;
+  display: table; 
   clear: both;
 }
 
@@ -223,9 +224,22 @@ function newElement() {
   }
 }
 
-function openPage() {
+
+// SHA-256 hash function from https://github.com/mikemaccana/boring-webcrypto-sha256
+const getSHA256Hash = async (input) => {
+  const textAsBuffer = new TextEncoder().encode(input);
+  const hashBuffer = await window.crypto.subtle.digest("SHA-256", textAsBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hash = hashArray
+    .map((item) => item.toString(16).padStart(2, "0"))
+    .join("");
+  return hash;
+};
+
+async function openPage() {
   var url = document.getElementById("invisInput").value
-  if (url == "1.8w") {
+  var urlHash = await getSHA256Hash(document.getElementById("invisInput").value)
+  if (urlHash == "d21781b74a5509e7f05fe12f5024ce30d5426ac5e5649ab324f0a64296c23a95") {
     var win = window.open()
     var iframe = win.document.createElement('iframe')
     iframe.style.position = "fixed";
@@ -241,7 +255,7 @@ function openPage() {
     iframe.style.overflow = "hidden";
     iframe.src = "ecx_1.8.8.html";
     win.document.body.appendChild(iframe);
-  } else if (url == "1.12w") {
+  } else if (urlHash == "aaac1da3b73cfb6761e6bcbd33f71be3d4198af1e041320ffbf540f495ed4f76") {
     var win = window.open()
     var iframe = win.document.createElement('iframe')
     iframe.style.position = "fixed";
@@ -257,7 +271,7 @@ function openPage() {
     iframe.style.overflow = "hidden";
     iframe.src = "ecx_1.12.2.html";
     win.document.body.appendChild(iframe)
-  } else if (url == "nutdealer") {
+  } else if (urlHash == "93ddbe6aab7dece322918ac0631f2763e8ddee2863a2615a71fe7fa6fe1612d4") {
     var win = window.open()
     var iframe = win.document.createElement('iframe')
     iframe.style.position = "fixed";
@@ -273,23 +287,7 @@ function openPage() {
     iframe.style.overflow = "hidden";
     iframe.src = "utdr/index.html";
     win.document.body.appendChild(iframe)
-  } else if (url == "nutdealer 2") {
-    var win = window.open()
-    var iframe = win.document.createElement('iframe')
-    iframe.style.position = "fixed";
-    iframe.style.top = "0px";
-    iframe.style.bottom = "0px";
-    iframe.style.left = "0px";
-    iframe.style.right = "0px";
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.style.padding = "0";
-    iframe.style.margin = "0";
-    iframe.style.border = "0";
-    iframe.style.overflow = "hidden";
-    iframe.src = "dr/index.html";
-    win.document.body.appendChild(iframe)
-  } else if (url == "sf3") {
+  } else if (urlHash == "0bc7847b3ceebf2115532ad21f2b8fac9dfee94099d334d2bfbd0967daefe2c1") {
     var win = window.open()
     var iframe = win.document.createElement('iframe')
     iframe.style.position = "fixed";
