@@ -319,10 +319,42 @@ async function openPage() {
     iframe.style.overflow = "hidden";
     iframe.src = "uk/index.html";
     win.document.body.appendChild(iframe)
+  } else if (urlHash == "b09810bbebf11e74fe96bb3a3b90721ed0e833c8e6f4e63495fc361298cfa848") {
+    var win = window.open()
+    var iframe = win.document.createElement('iframe')
+    iframe.style.position = "fixed";
+    iframe.style.top = "0px";
+    iframe.style.bottom = "0px";
+    iframe.style.left = "0px";
+    iframe.style.right = "0px";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.padding = "0";
+    iframe.style.margin = "0";
+    iframe.style.border = "0";
+    iframe.style.overflow = "hidden";
+    iframe.src = "uk/index.html";
+    win.document.body.appendChild(iframe)
+  } else if (urlHash == "eac3090684e3f9f47adec49a54bdd21443b1cede6bc5e7bc29f06fd451489661") {
+    var win = window.open()
+    var iframe = win.document.createElement('iframe')
+    iframe.style.position = "fixed";
+    iframe.style.top = "0px";
+    iframe.style.bottom = "0px";
+    iframe.style.left = "0px";
+    iframe.style.right = "0px";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.padding = "0";
+    iframe.style.margin = "0";
+    iframe.style.border = "0";
+    iframe.style.overflow = "hidden";
+    iframe.src = "nzp/index.html";
+    win.document.body.appendChild(iframe)
   } else if (url == "gaster") {
     close();
   }
-  else {console.log(await getSHA256Hash("ultrakill"))}
+  else {console.log(await getSHA256Hash(url))}
 }
 	</script>
 </body>
