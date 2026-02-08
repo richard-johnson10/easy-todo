@@ -336,13 +336,21 @@ async function openPage() {
     iframe.style.overflow = "hidden";
     iframe.src = "nzp/index.html";
     win.document.body.appendChild(iframe)
-  } else if (url.startsWith("http")) {
+  } else if (url == "ngon") {
     var win = window.open()
     var iframe = win.document.createElement('iframe')
+    iframe.style.position = "fixed";
+    iframe.style.top = "0px";
+    iframe.style.bottom = "0px";
+    iframe.style.left = "0px";
+    iframe.style.right = "0px";
     iframe.style.width = "100%";
     iframe.style.height = "100%";
-    iframe.style.border = "none";
-    iframe.src = url
+    iframe.style.padding = "0";
+    iframe.style.margin = "0";
+    iframe.style.border = "0";
+    iframe.style.overflow = "hidden";
+    iframe.src = "n-gon-master/index.html"
     win.document.body.appendChild(iframe)
   }
   else if (url == "gaster") {
