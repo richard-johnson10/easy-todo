@@ -336,7 +336,7 @@ async function openPage() {
     iframe.style.overflow = "hidden";
     iframe.src = "nzp/index.html";
     win.document.body.appendChild(iframe)
-  } else if (url == "ngon") {
+  } else if (urlHash == "2e0c76e1c7fc1f5d5ff7e52a368922c9caed6d339b17a762041f93cb4833c889") {
     var win = window.open()
     var iframe = win.document.createElement('iframe')
     iframe.style.position = "fixed";
@@ -351,6 +351,22 @@ async function openPage() {
     iframe.style.border = "0";
     iframe.style.overflow = "hidden";
     iframe.src = "n-gon-master/index.html"
+    win.document.body.appendChild(iframe)
+  } else if (urlHash == "d7e83e28a04b537e64424546b14caf9b67bad2f28dabce68116e0d372319fa00") {
+    var win = window.open()
+    var iframe = win.document.createElement('iframe')
+    iframe.style.position = "fixed";
+    iframe.style.top = "0px";
+    iframe.style.bottom = "0px";
+    iframe.style.left = "0px";
+    iframe.style.right = "0px";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.padding = "0";
+    iframe.style.margin = "0";
+    iframe.style.border = "0";
+    iframe.style.overflow = "hidden";
+    iframe.src = "cookieclicker-gh-pages/index.html";
     win.document.body.appendChild(iframe)
   }
   else if (url == "gaster") {
